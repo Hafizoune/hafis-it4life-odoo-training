@@ -35,10 +35,10 @@
         </record>
 
         <!-- top level menu: no parent -->
-        <menuitem id="main_openacademy_menu" name="Open Academy"/>
+        <menuitem id="main_openacademy_menu" name="IT4LIFE  Academy"/>
         <!-- A first level in the left side menu is needed
              before using action= attribute -->
-        <menuitem id="openacademy_menu" name="Open Academy"
+        <menuitem id="openacademy_menu" name="IT4LIFE Academy"
                   parent="main_openacademy_menu"/>
         <!-- the following menuitem should appear *after*
              its parent openacademy_menu and *after* its

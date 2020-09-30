@@ -9,4 +9,4 @@ class Course(models.Model):
 
     title = fields.Char(string="Title", required=True)
     description = fields.Text()
-    duration = fields.Integer(string="Number of hours scheduled for the course")
+    duration = fields.Integer(string="Number of hours ")
