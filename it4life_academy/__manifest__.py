@@ -22,7 +22,7 @@
 
     # always loaded
     'data': [ 
-        # 'views/schoolmodule.xml',
+         'views/course.xml',
            
     ],
 
