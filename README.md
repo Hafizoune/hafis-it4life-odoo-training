@@ -1,0 +1,1 @@
+# hafis-it4life-odoo-training
