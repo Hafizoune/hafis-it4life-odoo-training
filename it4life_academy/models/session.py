@@ -12,3 +12,8 @@ class Session(models.Model):
     end_date = fields.Date("End date ")
     duration = fields.Integer(string="Duration in days ")
     attendees = fields.Integer(string="Maximum number ")
+
+    former_id = fields.Many2one('res.partner', string="former")
+    course_id = fields.Many2one('it4life_academy.course',
+        ondelete='cascade', string="Course", required=True)
+    attendees_ids = fields.Many2many('res.partner', string="List_Attendees")

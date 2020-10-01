@@ -23,7 +23,8 @@
     # always loaded
     'data': [ 
          'views/course.xml',
-         'views/session.xml',  
+         'views/session.xml',
+         'views/contact.xml',
     ],
 
 }
