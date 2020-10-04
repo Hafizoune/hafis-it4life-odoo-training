@@ -52,3 +52,14 @@ class Session(models.Model):
             d2 = self.end_date
             log.error(d2)
             self.duration = int(relativedelta(d2, d1).years)
+
+
+    _sql_constraints = [
+        ('start_date_end_date_check',
+         'CHECK( start_date !=  end_date)',
+         "The start_date of the course should not be the end_date"),
+
+        ('name_unique',
+         'UNIQUE(name)',
+         "The session start_date must be unique"),
+    ]

@@ -21,3 +21,13 @@ class Course(models.Model):
             name = record.title
             result.append((record.id, name))
         return result
+
+    _sql_constraints = [
+        ('name_description_check',
+         'CHECK(title != description)',
+         "The title of the course should not be the description"),
+
+        ('name_unique',
+         'UNIQUE(name)',
+         "The course title must be unique"),
+    ]
