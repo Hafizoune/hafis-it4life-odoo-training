@@ -25,6 +25,7 @@
          'views/course.xml',
          'views/session.xml',
          'views/contact.xml',
+         'views/theme.xml',
     ],
 
 }

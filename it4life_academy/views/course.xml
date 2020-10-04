@@ -12,12 +12,27 @@
                             <field name="title"/>
                             <field name="description"/>
 			    <field name="duration"/>
-			    <!--<field name="description"/>-->
+			    <field name="theme_id"/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
+
+       
+       <record model="ir.ui.view" id="course_tree_view">
+            <field name="name">course.tree</field>
+            <field name="model">it4life_academy.course</field>
+            <field name="arch" type="xml">
+                <tree string="Course Tree">
+                            <field name="title"/>
+                            <field name="description"/>
+                            <field name="duration"/>
+                            <field name="theme_id"/>  
+                </tree>
+            </field>
+        </record>
+
 
         <!-- window action -->
         <!--
