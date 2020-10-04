@@ -2,8 +2,7 @@
 from datetime import datetime,date
 from odoo import models, fields, api
 from dateutil.relativedelta import relativedelta
-import logging 
-log = logging.getLogger("mes log")
+
 
 
 class Session(models.Model):
@@ -30,36 +29,21 @@ class Session(models.Model):
         return result
 
 
-#    @api.onchange('start_date','end_date')
-#    def calcul_duration(self):
-#        if self.start_date and self.end_date:
-#            dt=self.start_date
-#            dt1=self.end_date
-#            #d1 = datetime.strptime(dt, "%d/%m/%Y").date()
-#            #d2 = datetime.strptime(dt1, "%d/%m/%Y").date()
-#            rd = relativedelta(self.end_date, self.start_date)
-#            self.duration = str(rd.years) 
-#        return self.duration
-
     
     @api.onchange('start_date','end_date')
     def _compute_duration(self):
-        #self.ensure_one()
-        log.error("suis ds la fonction compute")
         if self.start_date and self.end_date:
             d1  = self.start_date
-            log.error(d1)
             d2 = self.end_date
-            log.error(d2)
             self.duration = int(relativedelta(d2, d1).years)
 
 
     _sql_constraints = [
         ('start_date_end_date_check',
          'CHECK( start_date !=  end_date)',
-         "The start_date of the course should not be the end_date"),
+         "La date de début du cours ne doit pas être la date de fin"),
 
         ('name_unique',
          'UNIQUE(name)',
-         "The session start_date must be unique"),
+         "La session date debut doit être unique"),
     ]
