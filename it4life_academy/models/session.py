@@ -29,7 +29,8 @@ class Session(models.Model):
         return result
 
 
-    
+    #function to calculate the duration
+
     @api.onchange('start_date','end_date')
     def _compute_duration(self):
         if self.start_date and self.end_date:
