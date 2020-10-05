@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+          <record model="ir.ui.view" id="theme_form_view">
+            <field name="name">session.form</field>
+            <field name="model">it4life_academy.theme</field>
+            <field name="arch" type="xml">
+                <form string="Theme Form">
+                    <sheet>
+                        <group>
+                            <field name="title"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="theme_tree_view">
+            <field name="name">session.tree</field>
+            <field name="model">it4life_academy.theme</field>
+            <field name="arch" type="xml">
+                <tree string="Theme Tree">
+                    <field name="title"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        <record model="ir.actions.act_window" id="theme_list_action">
+            <field name="name">Theme</field>
+            <field name="res_model">it4life_academy.theme</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first session
+                </p>
+            </field>
+        </record>
+
+        <!-- top level menu: no parent -->
+        <menuitem id="main_openacademy_menu" name="IT4LIFE Academy"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="openacademy_menu" name="IT4LIFE Academy"
+                  parent="main_openacademy_menu"/>
+        <!-- the following menuitem should appear *after*
+             its parent openacademy_menu and *after* its
+             action course_list_action -->
+        <menuitem id="theme_menu" name="theme" parent="openacademy_menu"
+                  action="theme_list_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
+
+</odoo>
